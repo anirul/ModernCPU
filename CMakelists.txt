@@ -40,6 +40,7 @@ if(WIN32)
     endif(${VCPKG_TARGET_TRIPLET} MATCHES "-static")
 endif(WIN32)
  
-add_subdirectory(MemoryAliasing)
 add_subdirectory(CacheAssociativity)
 add_subdirectory(Matrix)
+add_subdirectory(MemoryAliasing)
+add_subdirectory(VectorVsList)

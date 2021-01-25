@@ -162,3 +162,22 @@ Benchmark for the course modern CPU
 | BM_AdderNoAlias/32768   |   1829 ns |   1842 ns |     373333 |
 | BM_AdderNoAlias/262144  |  21259 ns |  20856 ns |      34462 |
 | BM_AdderNoAlias/1048576 |  87089 ns |  87193 ns |       8960 |
+
+### Vector vs List
+
+| Benchmark         |         Time |            CPU |  Iterations |
+|:------------------|-------------:|---------------:|------------:|
+| BM_Vector/8       |      7.62 ns |        7.50 ns |    89600000 |
+| BM_Vector/64      |      61.8 ns |        61.4 ns |    11200000 |
+| BM_Vector/512     |       447 ns |         445 ns |     1544828 |
+| BM_Vector/4096    |      3516 ns |        3530 ns |      194783 |
+| BM_Vector/32768   |     28062 ns |       28250 ns |       24889 |
+| BM_Vector/262144  |    224894 ns |      224933 ns |        2987 |
+| BM_Vector/1048576 |    898522 ns |      899431 ns |         747 |
+| BM_List/8         |      7.29 ns |        7.32 ns |    89600000 |
+| BM_List/64        |      60.7 ns |        61.4 ns |    11200000 |
+| BM_List/512       |       470 ns |         475 ns |     1544828 |
+| BM_List/4096      |      6990 ns |        6975 ns |       89600 |
+| BM_List/32768     |     87132 ns |       85449 ns |        8960 |
+| BM_List/262144    |    748819 ns |      732422 ns |         896 |
+| BM_List/1048576   |   7344050 ns |     7291667 ns |          90 |
