@@ -2,11 +2,11 @@
 
 Benchmark for the course modern CPU
 
-## Stats
+## Windows Stats
 
-- CPU: Intel 
-- platform: Windows 10
-- Compiler: VS 16.4
+- Processor: Intel(R) Core(TM) i7-10700KF CPU @ 3.80GHz 3.79 
+- platform: Windows 10 Home 64-bit (19041.746)
+- Compiler: MSVC 19.28.29336.0
 
 ### Cache Associativity
 
