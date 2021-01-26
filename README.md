@@ -8,6 +8,18 @@ Benchmark for the course modern CPU
 - Platform: Windows 10 Home 64-bit (19041.746)
 - Compiler: MSVC 19.28.29336.0
 
+### Branch Optimization
+
+| Benchmark             |         Time |            CPU |  Iterations |
+|:----------------------|-------------:|---------------:|------------:|
+| BM_BranchOpti/16      |      7.51 ns |        7.50 ns |    89600000 |
+| BM_BranchOpti/64      |      32.1 ns |        32.1 ns |    22400000 |
+| BM_BranchOpti/512     |       213 ns |         213 ns |     3446154 |
+| BM_BranchOpti/4096    |      1671 ns |        1674 ns |      448000 |
+| BM_BranchOpti/32768   |     13593 ns |       13497 ns |       49778 |
+| BM_BranchOpti/262144  |    108400 ns |      107422 ns |        6400 |
+| BM_BranchOpti/1048576 |    435334 ns |      419922 ns |        1600 |
+
 ### Cache Associativity
 
 | Benchmark        | Time           | CPU            | Iterations |
