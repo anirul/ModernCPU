@@ -19,7 +19,10 @@ static void BM_BranchOpti(benchmark::State& state)
 {
 	const size_t size = state.range(0);
 	std::vector<float> m1(size);
-	std::generate(m1.begin(), m1.end(), [] {return rand() % 2 ? -1.0f : 1.0f; });
+	std::generate(
+		m1.begin(), 
+		m1.end(), 
+		[] {return rand() % 2 ? -1.0f : 1.0f; });
 	for (auto _ : state) 
 	{
 		benchmark::DoNotOptimize(count_positive_c(m1.data(), m1.size()));
@@ -27,5 +30,4 @@ static void BM_BranchOpti(benchmark::State& state)
 }
 
 BENCHMARK(BM_BranchOpti)->Range(fromRange, toRange);
-
 BENCHMARK_MAIN();
