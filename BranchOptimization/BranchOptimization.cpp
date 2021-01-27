@@ -11,7 +11,6 @@ float count_add_c(const float* v, size_t size)
 	for (size_t i = 0; i < size; i++)
 	{
 		result += v[i];
-		benchmark::DoNotOptimize(result);
 	}
 	return result;
 }
@@ -35,7 +34,6 @@ float count_positive_c(const float* v, size_t size)
 	{
 		// result += v[i];
 		result += (int)v[i] % 2 ? -1.0f : 1.0f;
-		benchmark::DoNotOptimize(result);
 	}
 	return result;
 }
