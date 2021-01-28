@@ -42,6 +42,7 @@ endif(WIN32)
  
 add_subdirectory(BranchOptimization)
 add_subdirectory(CacheAssociativity)
+add_subdirectory(FloydWarshall)
 add_subdirectory(Matrix)
 add_subdirectory(MemoryAliasing)
 add_subdirectory(VectorOfArray)
