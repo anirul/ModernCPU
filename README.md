@@ -417,20 +417,20 @@ Benchmark for the course modern CPU
 
 | Benchmark            |         Time |            CPU |  Iterations |
 |:---------------------|-------------:|---------------:|------------:|
-| BM_ArrayVec3/8       |      31.6 ns |        31.6 ns |    22320251 |
-| BM_ArrayVec3/64      |      31.4 ns |        31.4 ns |    22125159 |
-| BM_ArrayVec3/512     |      31.2 ns |        31.2 ns |    22085283 |
-| BM_ArrayVec3/4096    |      31.3 ns |        31.3 ns |    22295054 |
-| BM_ArrayVec3/32768   |      31.2 ns |        31.2 ns |    22174129 |
-| BM_ArrayVec3/262144  |      31.2 ns |        31.2 ns |    22186143 |
-| BM_ArrayVec3/1048576 |      31.2 ns |        31.2 ns |    22251904 |
-| BM_Vec3Array/8       |       196 ns |         196 ns |     3530793 |
-| BM_Vec3Array/64      |       196 ns |         196 ns |     3534888 |
-| BM_Vec3Array/512     |       197 ns |         197 ns |     3525250 |
-| BM_Vec3Array/4096    |       196 ns |         196 ns |     3551444 |
-| BM_Vec3Array/32768   |       196 ns |         196 ns |     3547327 |
-| BM_Vec3Array/262144  |       197 ns |         197 ns |     3535346 |
-| BM_Vec3Array/1048576 |       197 ns |         197 ns |     3548580 |
+| BM_ArrayVec3/8       |       326 ns |         326 ns |     2163082 |
+| BM_ArrayVec3/64      |      2477 ns |        2477 ns |      286758 |
+| BM_ArrayVec3/512     |     19338 ns |       19337 ns |       35831 |
+| BM_ArrayVec3/4096    |    156347 ns |      156341 ns |        4457 |
+| BM_ArrayVec3/32768   |   1250966 ns |     1250927 ns |         558 |
+| BM_ArrayVec3/262144  |  10016437 ns |    10016224 ns |          69 |
+| BM_ArrayVec3/1048576 |  40325851 ns |    40324317 ns |          17 |
+| BM_Vec3Array/8       |      1033 ns |        1033 ns |      667704 |
+| BM_Vec3Array/64      |      8066 ns |        8066 ns |       85571 |
+| BM_Vec3Array/512     |     64465 ns |       64464 ns |       10629 |
+| BM_Vec3Array/4096    |    518467 ns |      518462 ns |        1339 |
+| BM_Vec3Array/32768   |   4138693 ns |     4138772 ns |         170 |
+| BM_Vec3Array/262144  |  33178109 ns |    33179342 ns |          21 |
+| BM_Vec3Array/1048576 | 132400724 ns |   132405384 ns |           5 |
 
 ### Vector vs List
 
