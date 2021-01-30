@@ -61,12 +61,15 @@ const unsigned long toRange = 1 << 20;
 
 static void BM_ArrayVec3(benchmark::State& state)
 {
-	std::array<Vec3, 4> array_vec3 = {};
+	auto size = static_cast<std::size_t>(state.range(0));
+	std::vector<std::array<Vec3, 4>> array_vec3{ size };
 	for (auto _ : state)
 	{
-		for (auto v : array_vec3)
-		{
-			benchmark::DoNotOptimize(Vec3::Dot(v, v));
+		for (auto element : array_vec3) {
+			for (auto v : element)
+			{
+				benchmark::DoNotOptimize(Vec3::Dot(v, v));
+			}
 		}
 	}
 }
@@ -74,10 +77,14 @@ BENCHMARK(BM_ArrayVec3)->Range(fromRange, toRange);
 
 static void BM_Vec3Array(benchmark::State& state)
 {
-	FourVec3 four_vec3{};
+	auto size = static_cast<std::size_t>(state.range(0));
+	std::vector<FourVec3> four_vec3{ size };
 	for (auto _ : state)
 	{
-		benchmark::DoNotOptimize(FourVec3::Dot(four_vec3, four_vec3));
+		for (auto element : four_vec3)
+		{
+			benchmark::DoNotOptimize(FourVec3::Dot(element, element));
+		}
 	}
 }
 BENCHMARK(BM_Vec3Array)->Range(fromRange, toRange);
