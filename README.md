@@ -98,6 +98,14 @@ Benchmark for the course modern CPU
 | BM_Step/1793     | 12677 ns       | 12835 ns       | 56000      |
 
 ### Floyd Warshall
+
+| Benchmark            |         Time |            CPU |  Iterations |
+|:---------------------|-------------:|---------------:|------------:|
+| BM_FloydWarshall/4   |      32.0 ns |        32.2 ns |    21333333 |
+| BM_FloydWarshall/8   |       252 ns |         257 ns |     2800000 |
+| BM_FloydWarshall/64  |    132373 ns |      128348 ns |        5600 |
+| BM_FloydWarshall/128 |    981803 ns |      983099 ns |         747 |
+
 ### Matrix
 
 | Benchmark              |           Time |            CPU  | Iterations  | Size        |
@@ -178,6 +186,24 @@ Benchmark for the course modern CPU
 | BM_AdderNoAlias/1048576 |  87089 ns |  87193 ns |       8960 |
 
 ### Vector of Array
+
+| Benchmark            |         Time |            CPU |  Iterations |
+| :--------------------|-------------:|---------------:|------------:|
+| BM_ArrayVec3/8       |      5.09 ns |        5.16 ns |   100000000 |
+| BM_ArrayVec3/64      |      5.15 ns |        5.16 ns |   100000000 |
+| BM_ArrayVec3/512     |      5.09 ns |        5.16 ns |   100000000 |
+| BM_ArrayVec3/4096    |      5.09 ns |        5.16 ns |   100000000 |
+| BM_ArrayVec3/32768   |      5.11 ns |        5.02 ns |   112000000 |
+| BM_ArrayVec3/262144  |      5.09 ns |        5.16 ns |   100000000 |
+| BM_ArrayVec3/1048576 |      5.09 ns |        5.16 ns |   100000000 |
+| BM_Vec3Array/8       |      2.78 ns |        2.76 ns |   248888889 |
+| BM_Vec3Array/64      |      2.78 ns |        2.76 ns |   248888889 |
+| BM_Vec3Array/512     |      2.78 ns |        2.76 ns |   248888889 |
+| BM_Vec3Array/4096    |      2.78 ns |        2.76 ns |   248888889 |
+| BM_Vec3Array/32768   |      2.79 ns |        2.76 ns |   248888889 |
+| BM_Vec3Array/262144  |      2.80 ns |        2.83 ns |   248888889 |
+| BM_Vec3Array/1048576 |      2.85 ns |        2.76 ns |   248888889 |
+
 ### Vector vs List
 
 | Benchmark         |         Time |            CPU |  Iterations |
