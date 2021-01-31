@@ -38,6 +38,8 @@ if(WIN32)
             CMAKE_CXX_FLAGS_RELWITHDEBINFO
             ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
     endif(${VCPKG_TARGET_TRIPLET} MATCHES "-static")
+else(WIN32)
+    add_compile_options("-O3")
 endif(WIN32)
  
 add_subdirectory(BranchOptimization)
