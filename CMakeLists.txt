@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_CXX_STANDARD 17)
 
+if(UNIX AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    if(NOT DEFINED VCPKG_TARGET_TRIPLET)
+        set(VCPKG_TARGET_TRIPLET "x64-linux")
+    endif()
+    include("~/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake")
+endif()
+
 project(ModernCPU)
 
 find_package(benchmark CONFIG REQUIRED)
@@ -38,9 +45,11 @@ if(WIN32)
             CMAKE_CXX_FLAGS_RELWITHDEBINFO
             ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
     endif(${VCPKG_TARGET_TRIPLET} MATCHES "-static")
-else(WIN32)
-    add_compile_options("-O3")
 endif(WIN32)
+
+if(UNIX)
+    add_compile_options("-O3")
+endif()
  
 add_subdirectory(BranchOptimization)
 add_subdirectory(CacheAssociativity)
