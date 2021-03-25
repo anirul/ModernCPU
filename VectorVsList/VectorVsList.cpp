@@ -10,10 +10,10 @@ std::byte array[toRange * sizeof(int)];
 static void BM_Vector(benchmark::State& state)
 {
 	const auto length = state.range(0);
-	std::vector<int> values(length);
-	for (auto& v : values)
+	std::vector<int> values;
+	for (int i = 0; i < length; i++)
 	{
-		v = rand() % 32768;
+		values.push_back(rand() % 32768);
 	}
 	for (auto _ : state)
 	{
@@ -29,7 +29,7 @@ static void BM_PMRVector(benchmark::State& state)
 {
 	const auto length = state.range(0);
 	std::pmr::monotonic_buffer_resource rsrc(array, sizeof array);
-	std::pmr::vector<int> values(length, &rsrc);
+	std::pmr::vector<int> values(&rsrc);
 	for (int i = 0; i < length; i++)
 	{
 		values.push_back(rand() % 32768);
@@ -80,5 +80,42 @@ static void BM_PMRList(benchmark::State& state)
 	}
 }
 BENCHMARK(BM_PMRList)->Range(fromRange, toRange);
+
+static void BM_Set(benchmark::State& state)
+{
+	const auto length = state.range(0);
+	std::set<int> values;
+	for (int i = 0; i < length; i++)
+	{
+		values.insert(rand() % 32768);
+	}
+	for (auto _ : state)
+	{
+		for (auto& v : values)
+		{
+			benchmark::DoNotOptimize(v);
+		}
+	}
+}
+BENCHMARK(BM_Set)->Range(fromRange, toRange);
+
+static void BM_PMRSet(benchmark::State& state)
+{
+	const auto length = state.range(0);
+	std::pmr::monotonic_buffer_resource rsrc(array, sizeof array);
+	std::pmr::set<int> values(&rsrc);
+	for (int i = 0; i < length; i++)
+	{
+		values.insert(rand() % 32768);
+	}
+	for (auto _ : state)
+	{
+		for (auto& v : values)
+		{
+			benchmark::DoNotOptimize(v);
+		}
+	}
+}
+BENCHMARK(BM_PMRSet)->Range(fromRange, toRange);
 
 BENCHMARK_MAIN();
